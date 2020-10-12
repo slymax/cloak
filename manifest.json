@@ -1,0 +1,14 @@
+{
+	"name": "Cloak",
+	"version": "1.0.0",
+	"manifest_version": 2,
+	"description": "disable search history suggestions",
+	"permissions": ["history"],
+	"background": {
+		"scripts": ["script.js"],
+		"persistent": false
+	},
+	"icons": {
+		"128": "icon.png"
+	}
+}
