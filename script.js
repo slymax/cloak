@@ -4,9 +4,12 @@ const clear = ({ url }) => {
 		chrome.history.deleteUrl({ url });
 	}
 };
-chrome.history.onVisited.addListener(clear);
-chrome.runtime.onInstalled.addListener(() => {
+const setup = () => {
 	chrome.history.search({ text }, results => {
 		results.forEach(clear);
 	});
-});
+};
+chrome.management.onEnabled.addListener(setup);
+chrome.runtime.onInstalled.addListener(setup);
+chrome.history.onVisited.addListener(clear);
+chrome.action.onClicked.addListener(setup);

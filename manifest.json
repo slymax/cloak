@@ -1,12 +1,15 @@
 {
 	"name": "Cloak",
-	"version": "1.0.1",
-	"manifest_version": 2,
-	"description": "disable search history suggestions in chrome",
-	"permissions": ["history"],
+	"version": "1.0.2",
+	"manifest_version": 3,
+	"description": "disable search history suggestions",
+	"permissions": [
+		"management",
+		"history"
+	],
+	"action": {},
 	"background": {
-		"scripts": ["script.js"],
-		"persistent": false
+		"service_worker": "script.js"
 	},
 	"icons": {
 		"128": "icon.png"
