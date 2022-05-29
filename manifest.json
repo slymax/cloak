@@ -1,13 +1,12 @@
 {
 	"name": "Cloak",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"manifest_version": 3,
 	"description": "disable search history suggestions",
 	"permissions": [
 		"management",
 		"history"
 	],
-	"action": {},
 	"background": {
 		"service_worker": "script.js"
 	},

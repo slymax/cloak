@@ -12,4 +12,3 @@ const setup = () => {
 chrome.management.onEnabled.addListener(setup);
 chrome.runtime.onInstalled.addListener(setup);
 chrome.history.onVisited.addListener(clear);
-chrome.action.onClicked.addListener(setup);
