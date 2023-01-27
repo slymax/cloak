@@ -1,11 +1,15 @@
-const text = "https://www.google.";
+const options = {
+	text: "https://www.google.",
+	maxResults: 100000,
+	startTime: 0
+};
 const clear = ({ url }) => {
-	if (url.startsWith(text)) {
+	if (url.startsWith(options.text)) {
 		chrome.history.deleteUrl({ url });
 	}
 };
 const setup = () => {
-	chrome.history.search({ text }, results => {
+	chrome.history.search(options, results => {
 		results.forEach(clear);
 	});
 };
