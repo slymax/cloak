@@ -1,10 +1,11 @@
 const options = {
-	text: "https://www.google.",
+	text: "www.google.",
 	maxResults: 100000,
 	startTime: 0
 };
 const clear = ({ url }) => {
-	if (url.startsWith(options.text)) {
+	const { hostname, pathname } = new URL(url);
+	if (hostname.startsWith(options.text) && pathname === "/search") {
 		chrome.history.deleteUrl({ url });
 	}
 };
