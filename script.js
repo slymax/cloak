@@ -1,6 +1,6 @@
 const options = {
 	text: "www.google.",
-	maxResults: 100000,
+	maxResults: 999999,
 	startTime: 0
 };
 const clear = ({ url }) => {
