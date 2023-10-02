@@ -9,10 +9,9 @@ const clear = ({ url }) => {
 		chrome.history.deleteUrl({ url });
 	}
 };
-const setup = () => {
-	chrome.history.search(options, results => {
-		results.forEach(clear);
-	});
+const setup = async () => {
+  const results = await chrome.history.search(options);
+  results.forEach(clear);
 };
 chrome.management.onEnabled.addListener(setup);
 chrome.runtime.onInstalled.addListener(setup);
